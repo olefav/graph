@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>res/standardbutton-open-32.png</file>
+        <file>res/standardbutton-save-32.png</file>
+        <file>res/Arrow.png</file>
+        <file>res/Create.png</file>
+        <file>res/Delete.png</file>
+        <file>res/Move.png</file>
+        <file>res/Exit.png</file>
+        <file>res/file-32.png</file>
+        <file>res/icon.png</file>
+    </qresource>
+</RCC>
