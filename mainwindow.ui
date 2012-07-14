@@ -11,11 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>[*] Граф</string>
+   <string>[*] Graph</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
     <normaloff>:/images/res/icon.png</normaloff>:/images/res/icon.png</iconset>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
   </property>
   <property name="documentMode">
    <bool>false</bool>
@@ -38,7 +41,7 @@
    </property>
    <widget class="QMenu" name="menu">
     <property name="title">
-     <string>Файл</string>
+     <string>File</string>
     </property>
     <addaction name="actionNew"/>
     <addaction name="actionOpen"/>
@@ -48,7 +51,7 @@
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
-     <string>Граф</string>
+     <string>Graph</string>
     </property>
     <addaction name="actionMove"/>
     <addaction name="actionAddVertexes"/>
@@ -87,10 +90,10 @@
      <normaloff>:/images/res/standardbutton-open-32.png</normaloff>:/images/res/standardbutton-open-32.png</iconset>
    </property>
    <property name="text">
-    <string>Открыть</string>
+    <string>Open</string>
    </property>
    <property name="toolTip">
-    <string>Открыть файл описания графа</string>
+    <string>Open graph from file</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+O</string>
@@ -102,10 +105,10 @@
      <normaloff>:/images/res/standardbutton-save-32.png</normaloff>:/images/res/standardbutton-save-32.png</iconset>
    </property>
    <property name="text">
-    <string>Сохранить</string>
+    <string>Save</string>
    </property>
    <property name="toolTip">
-    <string>Сохранить граф в файл</string>
+    <string>Save graph to file</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
@@ -117,10 +120,10 @@
      <normaloff>:/images/res/Exit.png</normaloff>:/images/res/Exit.png</iconset>
    </property>
    <property name="text">
-    <string>Выход</string>
+    <string>Exit</string>
    </property>
    <property name="toolTip">
-    <string>Выход из приложения</string>
+    <string>Exit the application</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+E</string>
@@ -135,10 +138,10 @@
      <normaloff>:/images/res/Move.png</normaloff>:/images/res/Move.png</iconset>
    </property>
    <property name="text">
-    <string>Передвигать</string>
+    <string>Move</string>
    </property>
    <property name="toolTip">
-    <string>Режим передвижения</string>
+    <string>Move mode</string>
    </property>
   </action>
   <action name="actionAddVertexes">
@@ -150,10 +153,10 @@
      <normaloff>:/images/res/Create.png</normaloff>:/images/res/Create.png</iconset>
    </property>
    <property name="text">
-    <string>Добавление вершин</string>
+    <string>Add nodes</string>
    </property>
    <property name="toolTip">
-    <string>Режим добавления вершин</string>
+    <string>Add nodes mode</string>
    </property>
   </action>
   <action name="actionAddLines">
@@ -165,10 +168,10 @@
      <normaloff>:/images/res/Arrow.png</normaloff>:/images/res/Arrow.png</iconset>
    </property>
    <property name="text">
-    <string>Добавление ребер</string>
+    <string>Add arrows</string>
    </property>
    <property name="toolTip">
-    <string>Режим добавления ребер</string>
+    <string>Add arrows mode</string>
    </property>
   </action>
   <action name="actionDelete">
@@ -177,23 +180,26 @@
      <normaloff>:/images/res/Delete.png</normaloff>:/images/res/Delete.png</iconset>
    </property>
    <property name="text">
-    <string>Удаление</string>
+    <string>Delete</string>
    </property>
    <property name="toolTip">
-    <string>Удаление выбранного объекта</string>
+    <string>Delete selected object</string>
    </property>
   </action>
   <action name="actionAdjMatrix">
    <property name="text">
-    <string>Матрица смежности...</string>
+    <string>Adjacency matrix...</string>
+   </property>
+   <property name="toolTip">
+    <string>Show adjacency matrix</string>
    </property>
   </action>
   <action name="actionChangeScale">
    <property name="text">
-    <string>Масштаб...</string>
+    <string>Scale...</string>
    </property>
    <property name="toolTip">
-    <string>Изменить масштаб</string>
+    <string>Change scale</string>
    </property>
   </action>
   <action name="actionNew">
@@ -202,10 +208,10 @@
      <normaloff>:/images/res/file-32.png</normaloff>:/images/res/file-32.png</iconset>
    </property>
    <property name="text">
-    <string>Новый граф</string>
+    <string>New</string>
    </property>
    <property name="toolTip">
-    <string>Создать новый граф</string>
+    <string>Create a new graph</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+N</string>

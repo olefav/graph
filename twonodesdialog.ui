@@ -11,7 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Select two nodes</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -19,14 +22,14 @@
      <item row="0" column="0">
       <widget class="QLabel" name="lblStart">
        <property name="text">
-        <string>Нач. верш.</string>
+        <string>Start node</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
       <widget class="QLabel" name="lblEnd">
        <property name="text">
-        <string>Кон.верш.</string>
+        <string>End node</string>
        </property>
       </widget>
      </item>

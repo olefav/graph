@@ -11,13 +11,16 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Размер</string>
+   <string>Scale</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>Масштаб</string>
+      <string>Scale</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>

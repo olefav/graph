@@ -46,7 +46,7 @@ private slots:
     void changeMode(QAction *);
     void checkDelete();
     void showAdjMatrix();
-    void buildDostMatrix();
+    void buildReachMatrix();
     void checkRouteTwoNodes();
     void setWModifTrue();
     void setWModifFalse();

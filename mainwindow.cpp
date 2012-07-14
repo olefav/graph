@@ -77,13 +77,13 @@ void MainWindow::loadFromFile() // integrated into designer
     if (!okToContinue())
         return;
 
-    QString filename = QFileDialog::getOpenFileName(this, tr("Открыть файл"), QApplication::applicationDirPath(), tr("Текстовые файлы (*.txt)"));
+    QString filename = QFileDialog::getOpenFileName(this, tr("Open file"), QApplication::applicationDirPath(), tr("Текстовые файлы (*.txt)"));
     if (filename.isEmpty())
         return;
     QFile file(filename);
     file.open(QFile::ReadOnly | QFile::Text);
     if(!file.isOpen()) {
-        QMessageBox::warning(0, tr("Ошибка"), tr("Невозможно открыть файл!"));
+        QMessageBox::warning(0, tr("Error"), tr("Unable to open file!"));
         return;
     }
 
@@ -92,7 +92,7 @@ void MainWindow::loadFromFile() // integrated into designer
         char c;
         file.getChar(&c);
         if((c != '0')&&(c != '1')&&(c != '\n')) {
-            QMessageBox::warning(0, tr("Ошибка"), tr("Неверное содержание файла"));
+            QMessageBox::warning(0, tr("Error"), tr("Wrong file contents!"));
             return;
         } else if(c != '\n')
             txt.append(c);
@@ -102,7 +102,7 @@ void MainWindow::loadFromFile() // integrated into designer
     double fnt = static_cast<int> (nt);
 
     if(!qFuzzyCompare(fnt, nt)) {
-        QMessageBox::warning(0, tr("Ошибка"), tr("Ошибка размерности матрицы, введенной из файла"));
+        QMessageBox::warning(0, tr("Error"), tr("Matrix dimension error."));
         return;
     }
 
@@ -127,7 +127,7 @@ void MainWindow::loadFromFile() // integrated into designer
 
 bool MainWindow::saveToFile()
 {
-    QString filename = QFileDialog::getSaveFileName(this, tr("Сохранение файла"), QApplication::applicationDirPath(), tr("Текстовые файлы (*.txt)"));
+    QString filename = QFileDialog::getSaveFileName(this, tr("Save file"), QApplication::applicationDirPath(), tr("Текстовые файлы (*.txt)"));
     if (filename.isEmpty())
         return false;
     int n = scene->nodesCount();
@@ -152,7 +152,7 @@ bool MainWindow::saveToFile()
     QFile file(filename);
     file.open(QFile::WriteOnly | QFile::Text);
     if(!file.isOpen()) {
-        QMessageBox::warning(0, tr("Ошибка"), tr("Невозможно открыть файл!"));
+        QMessageBox::warning(0, tr("Error"), tr("Unable to open file for writing!"));
         return false;
     }
     QTextStream stream(&file);
@@ -192,10 +192,10 @@ void MainWindow::exportToMatrix(bool **matr, int n)
     } //foreach allSceneItems
 }
 
-void MainWindow::buildDostMatrix()
+void MainWindow::buildReachMatrix()
 {
     if(isGraphEmpty()) {
-        QMessageBox::warning(0, tr("Ошибка"), tr("Граф не содержит ни одной вершины!"));
+        QMessageBox::warning(0, tr("Error"), tr("The graph has no vertexes!!"));
         return;
     }
     int n = scene->nodesCount();
@@ -282,9 +282,9 @@ void MainWindow::checkRouteTwoNodes()
                     mm[i][j] = mm[i][j] || (mm[i][k] && mm[k][j]);
 
         if(mm[k][l]) {
-            QMessageBox::information(0, tr("Результат"), tr("Путь существует"));
+            QMessageBox::information(0, tr("Result"), tr("There is a way"));
         } else {
-            QMessageBox::information(0, tr("Результат"), tr("Путь не существует"));
+            QMessageBox::information(0, tr("Result"), tr("There are no ways"));
         }
 
     }
@@ -413,9 +413,9 @@ void MainWindow::newGraph()
 bool MainWindow::okToContinue()
 {
     if (isWindowModified()) {
-        int r = QMessageBox::warning(this, tr("Граф"),
-                        tr("Граф был изменен.\n"
-                           "Вы хотите сохранить изменения??"),
+        int r = QMessageBox::warning(this, tr("Graph"),
+                        tr("The gragh was changed.\n"
+                           "Do you want to save it??"),
                         QMessageBox::Yes | QMessageBox::No
                         | QMessageBox::Cancel);
         if (r == QMessageBox::Yes) {
