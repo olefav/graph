@@ -329,7 +329,7 @@ void MainWindow::changeMode(QAction * act)
 
 void MainWindow::checkDelete()
 {
-    QList<QGraphicsItem *> allSceneItems = scene->items();
+    QList<QGraphicsItem *> allSceneItems = scene->selectedItems();
     if (allSceneItems.isEmpty())
         ui->actionDelete->setEnabled(false);
     else

@@ -40,4 +40,4 @@ FORMS    += mainwindow.ui \
 RESOURCES += \
     resources.qrc
 
-TRANSLATIONS += graph_ru.ts
+TRANSLATIONS += graph_ru.ts qt_ru.ts
