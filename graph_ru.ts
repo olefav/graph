@@ -88,7 +88,7 @@
     <message>
         <location filename="mainwindow.ui" line="123"/>
         <source>Exit</source>
-        <translation>Выйти</translation>
+        <translation>Выход</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="126"/>
@@ -186,9 +186,13 @@
         <translation>Открыть файл</translation>
     </message>
     <message>
+        <source>Òåêñòîâûå ôàéëû (*.txt)</source>
+        <translation type="obsolete">Текстовые файлы (*.txt)</translation>
+    </message>
+    <message>
         <location filename="mainwindow.cpp" line="80"/>
         <location filename="mainwindow.cpp" line="130"/>
-        <source>Òåêñòîâûå ôàéëû (*.txt)</source>
+        <source>Text files (*.txt)</source>
         <translation>Текстовые файлы (*.txt)</translation>
     </message>
     <message>
@@ -248,9 +252,11 @@
     </message>
     <message>
         <location filename="mainwindow.cpp" line="417"/>
-        <source>The gragh was changed.
-Do you want to save it??</source>
-        <translation>Граф был изменен. \n Вы хотите сохранить изменения?</translation>
+        <source>The graph was changed.
+Do you want to save it?</source>
+        <oldsource>The gragh was changed.
+Do you want to save it??</oldsource>
+        <translation>Граф был изменен. Вы хотите сохранить изменения?</translation>
     </message>
 </context>
 <context>

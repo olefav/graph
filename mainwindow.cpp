@@ -19,7 +19,7 @@ Node* findNode(QList<Node*> nlist, int number)
 {
     int n = nlist.count();
     for(int i = 0; i < n; ++i) {
-        if(nlist.at(i)->getNumber()-1 == number) {
+        if(nlist.at(i)->getNumber() - 1 == number) {
             return nlist.at(i);
         }
     }
@@ -72,12 +72,12 @@ void MainWindow::deleteSelected()
     scene->deleteSelectedItems();
 }
 
-void MainWindow::loadFromFile() // integrated into designer
+void MainWindow::loadFromFile()
 {
     if (!okToContinue())
         return;
 
-    QString filename = QFileDialog::getOpenFileName(this, tr("Open file"), QApplication::applicationDirPath(), tr("Текстовые файлы (*.txt)"));
+    QString filename = QFileDialog::getOpenFileName(this, tr("Open file"), QApplication::applicationDirPath(), tr("Text files (*.txt)"));
     if (filename.isEmpty())
         return;
     QFile file(filename);
@@ -127,7 +127,7 @@ void MainWindow::loadFromFile() // integrated into designer
 
 bool MainWindow::saveToFile()
 {
-    QString filename = QFileDialog::getSaveFileName(this, tr("Save file"), QApplication::applicationDirPath(), tr("Текстовые файлы (*.txt)"));
+    QString filename = QFileDialog::getSaveFileName(this, tr("Save file"), QApplication::applicationDirPath(), tr("Text files (*.txt)"));
     if (filename.isEmpty())
         return false;
     int n = scene->nodesCount();
@@ -414,8 +414,8 @@ bool MainWindow::okToContinue()
 {
     if (isWindowModified()) {
         int r = QMessageBox::warning(this, tr("Graph"),
-                        tr("The gragh was changed.\n"
-                           "Do you want to save it??"),
+                        tr("The graph was changed.\n"
+                           "Do you want to save it?"),
                         QMessageBox::Yes | QMessageBox::No
                         | QMessageBox::Cancel);
         if (r == QMessageBox::Yes) {
