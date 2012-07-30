@@ -34,9 +34,6 @@ private:
     Ui::MainWindow *ui;
     double curScale;
 
-protected:
-    void resizeEvent(QResizeEvent *);
-
 private slots:
     void newGraph();
     void deleteSelected();

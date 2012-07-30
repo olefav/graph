@@ -438,13 +438,6 @@ void MainWindow::setWModifFalse()
     setWindowModified(false);
 }
 
-void MainWindow::resizeEvent(QResizeEvent * event)
-{
-    ui->graphicsView->setSceneRect(QRectF(0, 0, ui->graphicsView->width(), ui->graphicsView->height()));
-    QMainWindow::resizeEvent(event);
-
-}
-
 MainWindow::~MainWindow()
 {
     delete ui;
