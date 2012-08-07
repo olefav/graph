@@ -36,10 +36,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
     scene = new GraphScene(this);
 
+
     curScale = 1.0;
 
     ui->graphicsView->setScene(scene);
-    ui->graphicsView->setSceneRect(QRectF(0, 0, ui->graphicsView->width(), ui->graphicsView->height()));
+    //ui->graphicsView->setSceneRect(QRectF(0, 0, ui->graphicsView->width(), ui->graphicsView->height()));
+    ui->graphicsView->setSceneRect(QRectF());
 
     makeActionGroup();
 
@@ -47,6 +49,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(scene, SIGNAL(changed(QList<QRectF>)), SLOT(setWModifTrue()));
     QTimer::singleShot(0, this, SLOT(setWModifFalse()));
+    QTimer::singleShot(0, this, SLOT(setupSceneRect()));
 }
 
 void MainWindow::sceneScaleChanged(const QString &scale)
@@ -436,6 +439,21 @@ void MainWindow::setWModifTrue()
 void MainWindow::setWModifFalse()
 {
     setWindowModified(false);
+}
+
+void MainWindow::setupSceneRect()
+{
+    QRectF gwgeometry = ui->graphicsView->geometry();
+    QRectF gwsized;
+    gwsized.setSize(gwgeometry.size());
+    scene->setSceneRect(gwsized.adjusted(0, 0, -5, -5)); // why 5?
+    qDebug() << gwsized;
+}
+
+void MainWindow::resizeEvent(QResizeEvent * event)
+{
+    setupSceneRect();
+    QMainWindow::resizeEvent(event);
 }
 
 MainWindow::~MainWindow()

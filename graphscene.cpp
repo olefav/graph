@@ -53,6 +53,11 @@ void GraphScene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
         QLineF newLine(line->line().p1(), mouseEvent->scenePos());
         line->setLine(newLine);
     }   else if(curMode == MoveItem) {
+        //qDebug() << sceneRect().contains(mouseEvent->scenePos());
+        if (!sceneRect().contains(mouseEvent->scenePos())) {
+            mouseEvent->ignore();
+            return;
+        }
         QGraphicsScene::mouseMoveEvent(mouseEvent);
     }
 }

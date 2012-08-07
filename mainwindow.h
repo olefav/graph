@@ -34,7 +34,11 @@ private:
     Ui::MainWindow *ui;
     double curScale;
 
+protected:
+    void resizeEvent(QResizeEvent *);
+
 private slots:
+    void setupSceneRect();
     void newGraph();
     void deleteSelected();
     void changeScale();
