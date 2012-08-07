@@ -18,6 +18,8 @@ public:
     Node* getStartNode() {return startNode;}
     Node* getEndNode() {return endNode;}
     void updatePosition();
+    int getWeight() const;
+    void setWeight(int w);
 
     int type() const {return Type; }
 
@@ -29,6 +31,7 @@ private:
     Node *endNode;
     QColor color;
     QPolygonF arrowHead;
+    int weight;
 };
 
 #endif // LINK_H

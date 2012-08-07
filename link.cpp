@@ -11,6 +11,7 @@ Link::Link(Node *startNode_f, Node *endNode_f, QGraphicsItem *parent, QGraphicsS
     endNode = endNode_f;
     setFlag(QGraphicsItem::ItemIsSelectable, true);
     color = Qt::black;
+    weight = 1;
     setPen(QPen(color, 2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
 }
 
@@ -46,6 +47,16 @@ void Link::updatePosition()
     setLine(line);
 }
 
+void Link::setWeight(int w)
+{
+    weight = w;
+}
+
+int Link::getWeight() const
+{
+    return weight;
+}
+
 void Link::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     if (startNode->collidesWithItem(endNode))
@@ -56,8 +67,6 @@ void Link::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
     qreal arrowSize = 8;
     painter->setPen(myPen);
     painter->setBrush(color);
-
-    painter->setRenderHint(QPainter::Antialiasing, true);
 
     QLineF cLine(startNode->pos(), endNode->pos());
     double length = cLine.length();
